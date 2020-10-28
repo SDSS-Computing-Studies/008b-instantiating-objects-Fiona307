@@ -80,6 +80,7 @@ class animal:
     name = None
     owner = None
     birthdate = None
+    
     def __init__(self):
         self.animaltype = input("Type of animal?")
         self.breed = input("Breed?")
@@ -96,7 +97,7 @@ class animal:
 
     def __del__(self):
         print("Executed")
-        
+
 x = animal()
 animals = []
 a = 0
