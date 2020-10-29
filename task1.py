@@ -91,9 +91,7 @@ class animal:
 
     def display(self):
         length = len(self.name)
-        print(length*"=")
         print(self.name)
-        print(length*"=")
         print(self.animaltype)
         print(self.breed)
         print("is owned by:" + self.owner)
