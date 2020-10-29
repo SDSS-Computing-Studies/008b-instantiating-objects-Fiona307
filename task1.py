@@ -80,7 +80,8 @@ class animal:
     name = None
     owner = None
     birthdate = None
-    
+    num = None
+
     def __init__(self):
         self.animaltype = input("Type of animal?")
         self.breed = input("Breed?")
@@ -88,34 +89,33 @@ class animal:
         self.owner = input("Owner?")
         self.birthdate = input("Birthdate of the pet?expressed as yyyy-mm-dd")
 
-
-    def display(self,name):
-        self.name = name
+    def display(self):
+        length = len(self.name)
+        print(length*"=")
         print(self.name)
+        print(length*"=")
+        print(self.animaltype)
         print(self.breed)
         print("is owned by:" + self.owner)
 
-    def __del__(self):
-        print("Executed")
-
-x = animal()
-animals = []
-a = 0
-
 def main():
-    print("MENU")
-    print("1. Enter a new pet\n" + "2. Retrieve a pet\n" + "3. Exit")
-    num = input()
-    if num == 1:
-        animals.append(x)
-    if num == 2:
-        x.display(input("Enter the name of the pet:"))
-    if num == 3:
-        del x
-        a = 1
+    animals = []
+    num = 0
+    while 1 > 0:
+        print("====\n"+"MENU\n"+"====")
+        print("1. Enter a new pet\n" + "2. Retrieve a pet\n" + "3. Exit")
+        num = int(input("Choose number 1, 2, or 3:"))
+        if num == 1:
+            animals.append(animal())
+        if num == 2:
+            length = len(animals)
+            inputname = input("Enter the name of the pet:")
+            for i in range(0,length):
+                petname = animals[i].name
+                if petname == inputname:
+                    animals[i].display()
+        if num == 3:
+            print("Executed")
+            break
 
-
-while a == 0:
-    main()
-    if a == 1:
-        break
+main()
